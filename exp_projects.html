@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EXPLORATORY PROJECTS — Brad Ziyi Wang</title>
+    <style>
+        :root {
+            --green: #669966;
+            --green-light: #d8ead8;
+            --green-dark: #4d6b4d;
+        }
+        html,body { height:100%; margin:0; font-family: Arial, sans-serif; color:#222; background:#f7f7f7; }
+        .page { max-width:980px; margin:0 auto; padding:28px; display:flex; flex-direction:column; min-height:100vh; }
+        .center { display:flex; justify-content:center; align-items:center; }
+        header {
+            text-align:center;
+            margin:18px 0 26px;
+            background: var(--green-light);
+            padding: 18px 12px;
+            border-radius: 8px;
+        }
+        header h1 { margin:0; font-size:2rem; color:var(--green); letter-spacing:0.02em; text-transform:uppercase; }
+        .back-btn { display:inline-block; background:var(--green); color:#fff; padding:10px 16px; border-radius:6px; text-decoration:none; font-weight:600; box-shadow:0 3px 8px rgba(0,0,0,0.12); }
+        .back-btn:focus { outline:2px dashed var(--green-dark); outline-offset:4px; }
+        main { flex:1; margin:18px 0; }
+        .note { color:#444; margin-bottom:36px; text-align:center; } /* increased spacing below the note */
+
+        /* small cards for trivial projects */
+        .expl-grid {
+            display:grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+            gap:16px;
+            align-items:start;
+        }
+        /* Make each card a same-size box with an image, a light-green title band, and a short description */
+        .expl-card {
+            background:#fff;
+            border-radius:8px;
+            overflow:hidden;
+            border:1px solid rgba(0,0,0,0.06);
+            box-shadow:0 4px 10px rgba(0,0,0,0.04);
+            display:flex;
+            flex-direction:column;
+            /* removed fixed height so cards grow to fit image and content */
+        }
+        .expl-thumb {
+            width:100%;
+            height:auto; /* let image determine height to avoid cropping */
+            object-fit:contain; /* preserve full image without cropping */
+            display:block;
+            background:#eee;
+            border-bottom-left-radius:0;
+            border-bottom-right-radius:0;
+        }
+        .expl-body {
+            padding:12px;
+            display:flex;
+            flex-direction:column;
+            justify-content:space-between;
+            flex:1;
+        }
+        .expl-title {
+            background: var(--green-light);
+            color: var(--green-dark);
+            padding:8px 10px;
+            border-radius:6px;
+            font-weight:700;
+            text-align:center;
+            margin-bottom:8px;
+        }
+        .expl-desc {
+            font-size:0.95rem;
+            line-height:1.35;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            display:-webkit-box;
+            -webkit-line-clamp:3; /* limit description to ~3 lines */
+            line-clamp:3; /* standard property for compatibility */
+            -webkit-box-orient:vertical;
+        }
+
+        footer { margin-top:28px; text-align:center; color:#666; font-size:0.9rem; }
+        @media (max-width:600px) {
+            .expl-thumb { height:auto; }
+            .page { padding:20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="center" style="margin-bottom:12px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio">← Back to portfolio</a>
+        </div>
+
+        <header role="banner" aria-labelledby="page-title">
+            <h1 id="page-title">EXPLORATORY PROJECTS</h1>
+        </header>
+
+        <main role="main">
+            <p class="note">A collection of smaller personal projects that explore various ideas and technologies. These are rapid prototypes, experiments, or tools that may not warrant a full project page but are still worth sharing.</p>
+            <div class="expl-grid" aria-label="Exploratory projects list">
+                <div class="expl-card" role="article">
+                    <img class="expl-thumb" src="images/exp1-placeholder.png" alt="Exploratory project 1 thumbnail">
+                    <div class="expl-body">
+                        <div class="expl-title">Experiment: Sensor Log</div>
+                        <p class="expl-desc">Simple script to log sensor readings and visualize trends. Quick prototype showing basic data flow.</p>
+                    </div>
+                </div>
+
+                <div class="expl-card" role="article">
+                    <img class="expl-thumb" src="images/exp2-placeholder.png" alt="Exploratory project 2 thumbnail">
+                    <div class="expl-body">
+                        <div class="expl-title">Prototype: UI Theme Switcher</div>
+                        <p class="expl-desc">Lightweight theme switcher to test color contrasts and accessibility across components.</p>
+                    </div>
+                </div>
+
+                <div class="expl-card" role="article">
+                    <img class="expl-thumb" src="rocket.jpg" alt="Project Rocketry thumbnail">
+                    <div class="expl-body">
+                        <div class="expl-title">Rocketry: solid engine, compressed air and water</div>
+                        <p class="expl-desc">Explored rocketry with A6-3/B6-4 solid engines, compressed air, and water propulsion systems. (2017)</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="center" style="margin-top:18px;">
+            <a class="back-btn" href="index.html#portfolio" aria-label="Back to portfolio (bottom)">← Back to portfolio</a>
+        </div>
+
+        <footer>
+            <small>&copy; <span id="year"></span> Brad Ziyi Wang</small>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
