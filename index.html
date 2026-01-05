@@ -229,22 +229,35 @@
         }
         footer {
             text-align: center;
-            padding: 12px 20px;
+            padding: 32px 20px; /* more space above and below footer content */
             background: var(--green-light);
             color: var(--green-dark);
         }
 
         /* social / slogan in footer */
         footer .slogan {
-            margin: 10px 0 0;
+            margin: 10px 0 8px; /* add a bit of space below slogan */
             color: var(--green-dark);
             font-weight: 600;
             font-size: 1.1rem; /* slightly larger slogan */
         }
 
         .social {
-            margin-top: 8px;
+            margin: 12px 0; /* vertical spacing around social icons */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
         }
+        /* constrain social icon size */
+        .social img {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            display: block;
+            border-radius: 4px;
+        }
+        footer small { margin: 0; } /* ensure copyright doesn't add extra spacing */
 
         /* Back to top button */
         .back-to-top {
@@ -383,15 +396,17 @@
     </main>
 
     <footer>
-        <small>&copy; <span id="year"></span> Brad Ziyi Wang</small>
 
         <p class="slogan">PLACEHOLDER SLOGAN</p> 
 
         <div class="social" aria-label="Social links">
             <a href="https://ca.linkedin.com/in/bradwzy" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                <img src="linkedin_logo.png" alt="LinkedIn profile">
+                <img src="linkedin_logo.png" alt="LinkedIn profile" width="32" height="32">
             </a>
         </div>
+
+        <small>&copy; <span id="year"></span> Brad Ziyi Wang</small>
+        
     </footer>
 
     <!-- Back to top button -->
